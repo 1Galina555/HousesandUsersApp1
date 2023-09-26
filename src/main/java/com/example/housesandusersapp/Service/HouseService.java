@@ -1,6 +1,7 @@
-package Service;
+package com.example.housesandusersapp.Service;
 
-import Models.House;
+import com.example.housesandusersapp.DTO.HouseDto;
+import com.example.housesandusersapp.Models.House;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -9,8 +10,8 @@ import java.util.Optional;
 public interface HouseService {
     Iterable<House> getAll();              // получить все дома
     Optional<House> getById(Integer id);   // получить дом по id
-    House add(House house);//добавить дом
-    House update(Integer id,House house);//обновить целиком
+    House add(HouseDto house);//добавить дом
+    House update(Integer id,HouseDto house);//обновить целиком
 
     void delete(Integer id);//
 

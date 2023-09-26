@@ -1,18 +1,14 @@
-package Models;
+package com.example.housesandusersapp.Models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name="house_t")
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class House {
     // поля - соответствуют столбцам (атрибутам) БД
     @Id
@@ -22,11 +18,7 @@ public class House {
     @Column(name="address_f", nullable = false)
     private String adress;
     @OneToOne
-    @JoinColumn(name="id_master", referencedColumnName = "id")
+    @JoinColumn(name="idMaster", referencedColumnName = "id")
     private User user;
 
-    @Override
-    public String toString() {
-        return id + " - " + adress + " - " + user ;
-    }
 }

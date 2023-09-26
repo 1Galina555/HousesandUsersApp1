@@ -1,16 +1,13 @@
-package Models;
+package com.example.housesandusersapp.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name="user_t")
-@Getter
-@Setter
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +20,6 @@ public class User {
     private Integer age;
     @Column(name="password", nullable = false)
     private String password;
-    @ManyToOne
-    @JoinColumn(name="id_house", referencedColumnName = "id")
-    private House house;
+
+
 }
